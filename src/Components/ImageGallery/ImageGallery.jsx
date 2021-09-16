@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { API_KEY, URL } from '../../Utilits/KEY_pixabay';
+import { API_KEY, URL } from '../../utilits/KEY_pixabay';
 import ImageGalleryItem from '../ImageGalleryItem/ImageGalleryItem';
 import Button from '../Button/Button';
 import { SpinnerLoader } from '../Loader/Loader';
