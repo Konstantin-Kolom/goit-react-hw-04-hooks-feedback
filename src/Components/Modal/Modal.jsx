@@ -9,7 +9,6 @@ export function Modal({ onClose, children }) {
   const hendelKeyDown = e => {
     console.log(e);
     if (e.code === 'Escape') {
-      // console.log('fff');
       onClose();
     }
   };
@@ -32,35 +31,3 @@ export function Modal({ onClose, children }) {
     modalRoot,
   );
 }
-
-// class Modal1 extends Component {
-//   componentDidMount() {
-//     window.addEventListener('keydown', this.hendelKeyDown);
-//   }
-
-//   componentWillUnmount() {
-//     window.removeEventListener('keydown', this.hendelKeyDown);
-//   }
-
-//   hendelKeyDown = e => {
-//     if (e.code === 'Escape') {
-//       this.props.onClose();
-//     }
-//   };
-
-//   hendelBackdropClick = e => {
-//     if (e.target === e.currentTarget) {
-//       this.props.onClose();
-//     }
-//   };
-
-//   render() {
-//     return createPortal(
-//       <div className={s.Overlay} onClick={this.hendelBackdropClick}>
-//         <div className={s.Modal}>{this.props.children}</div>
-//       </div>,
-//       modalRoot,
-//     );
-//   }
-// }
-// export default Modal1;
