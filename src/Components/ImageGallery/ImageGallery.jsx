@@ -66,7 +66,7 @@ export function ImageGallery({ search, modalImage }) {
         }
         response
           .json()
-          .then(photo => setGallery([...gallery, ...photo.hits]))
+          .then(photo => setGallery(g => [...g, ...photo.hits]))
           .finally(() => setLoading(false));
       });
     }

@@ -6,13 +6,6 @@ import s from './Modal.module.css';
 const modalRoot = document.querySelector('#modal-root');
 
 export function Modal({ onClose, children }) {
-  const hendelKeyDown = e => {
-    console.log(e);
-    if (e.code === 'Escape') {
-      onClose();
-    }
-  };
-
   const hendelBackdropClick = e => {
     if (e.target === e.currentTarget) {
       onClose();
@@ -20,8 +13,14 @@ export function Modal({ onClose, children }) {
   };
 
   useEffect(() => {
+    const hendelKeyDown = e => {
+      console.log(e);
+      if (e.code === 'Escape') {
+        onClose();
+      }
+    };
     window.addEventListener('keydown', hendelKeyDown);
-    return window.removeEventListener('keydown', hendelKeyDown);
+    return () => window.removeEventListener('keydown', hendelKeyDown);
   });
 
   return createPortal(
