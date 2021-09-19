@@ -56,10 +56,11 @@ export function ImageGallery({ search, modalImage }) {
   }, [search]);
 
   useEffect(() => {
+    const ddd = search;
     if (page > 1) {
       setLoading(true);
       return fetch(
-        `${URL}?q=${search}&page=${page}&key=${API_KEY}&image_type=photo&orientation=horizontal&per_page=12`,
+        `${URL}?q=${ddd}&page=${page}&key=${API_KEY}&image_type=photo&orientation=horizontal&per_page=12`,
       ).then(response => {
         if (!response.ok) {
           throw new Error(response.status);
@@ -70,7 +71,8 @@ export function ImageGallery({ search, modalImage }) {
           .finally(() => setLoading(false));
       });
     }
-  }, [page, search]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [page]);
 
   useEffect(() => {
     if (gallery.length > 0) {
