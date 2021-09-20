@@ -4,7 +4,6 @@ import s from './ImageGalleryItem.module.css';
 
 export function ImageGalleryItem({ gallery, modalImageData }) {
   const hendleClickImage = e => {
-    console.log();
     modalImageData(e.target.parentNode.getAttribute('srcmodal'));
   };
 
